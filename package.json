@@ -1,0 +1,65 @@
+{
+  "name": "quiz-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "config": "node config/config.json",
+    "server": "nodemon app.js",
+    "start": "node app.js",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier --check **/*.js",
+    "format": "prettier -w .",
+    "prettier:fix": "prettier --write **/*.js",
+    "_migrate": "sequelize db:migrate",
+    "_migrate:status": "sequelize db:migrate:status",
+    "_migrate:undo": "sequelize db:migrate:undo",
+    "_seed": "sequelize db:seed:all",
+    "migrate": "npm-run-all config _migrate",
+    "migrate:status": "npm-run-all config _migrate:status",
+    "migrate:undo": "npm-run-all config _migrate:undo",
+    "seed": "npm-run-all config _seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NabeelAhmad0715/quiz-portal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NabeelAhmad0715/quiz-portal/issues"
+  },
+  "homepage": "https://github.com/NabeelAhmad0715/quiz-portal#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "node-cron": "^3.0.0",
+    "nodemailer": "^6.7.0",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
+    "sequelize-cli": "^6.2.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
