@@ -71,7 +71,7 @@ const store = async (req, res, _next) => {
       type,
       user_id: userId,
     });
-    return res.status(200).json(questionBank);
+    return res.status(200).writeHead({'Access-Control-Allow-Origin': 'http://localhost:3000'}, {'Access-Control-Allow-Origin': 'https://quiz-portal-online.herokuapp.com'}, {'Access-Control-Allow-Credentials': 'true'}, {'Access-Control-Allow-Methods': '*'}, {'Access-Control-Max-Age': '600'}).json(questionBank);
   } catch (err) {
     return res.status(400).json(err);
   }
